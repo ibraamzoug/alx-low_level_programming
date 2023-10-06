@@ -1,42 +1,34 @@
 #include <stdio.h>
 
 /**
- *  * main - possible combos of 3 digits
- *   *
- *    * Return (0)
- *     */
-
+ *  * main - Prints all possible combinations of three different digits,
+ *   *        in ascending order, separated by a comma followed by a space.
+ *    *
+ *     * Return: Always 0.
+ *      */
 int main(void)
 {
-		int i, j, k;
+		int digit1, digit2, digit3;
 
-			for (i = 48; i < 58; i++)
+			for (digit1 = 0; digit1 < 8; digit1++)
 					{
-								for (j = 48; j < 58; j++)
+								for (digit2 = digit1 + 1; digit2 < 9; digit2++)
 											{
-															for (k = 48; k < 58; k++)
+															for (digit3 = digit2 + 1; digit3 < 10; digit3++)
 																			{
-																								if (i == j || j == k || i == k)
-																													{
-																																			continue;
-																																							}
-																												putchar(i);
-																																putchar(j);
-																																				putchar(k);
+																								putchar((digit1 % 10) + '0');
+																												putchar((digit2 % 10) + '0');
+																																putchar((digit3 % 10) + '0');
 
-																																								if (i == 55 && j == 56 && k == 57)
-																																													{
-																																																			break;
-
-																																																							}
-																																												else
-																																																	{
-																																																							putchar(',');
-																																																												putchar(' ');
-																																																																}
+																																				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
+																																										continue;
+																																								putchar(',');
+																																												putchar(' ');
 																																															}
 																	}
-										putchar('\n');
-												return (0);
-													}
+									}
+
+				putchar('\n');
+
+					return (0);
 }
