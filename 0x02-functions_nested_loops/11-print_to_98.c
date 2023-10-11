@@ -1,90 +1,33 @@
+#include <stdio.h>
 #include "main.h"
-/**
- * print_to_98 - prints numbers to 98
- * @n: first parameter
- *
- * Description: prints all num to 98
- * Return: Always (0).
- */
 
+/**
+ * print_to_98 - prints all natural numbers from n to 98,
+ * followed by a new line
+ * @n: starting integer
+ * Return: void
+ */
 void print_to_98(int n)
 {
-	int end;
+	int a, b;
 
-	end = 98;
-
-	if (n < end)
+	if (n <= 98)
 	{
-		for (; n <= end; n++)
+		for (a = n; a <= 98; a++)
 		{
-			if (n == 98)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				break;
-			}
-			else
-			{
-				if (n >= -9 && n <= 9)
-				{
-					if (n < 0)
-					{
-						_putchar('-');
-						_putchar((n * -1) + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-					else if (n >= 0)
-					{
-						_putchar(n + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
-				else if (n >= 100)
-				{
-					_putchar((n / 100) + '0');
-					_putchar((n / 10) + '0');
-					_putchar((n % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar((n / 10) + '0');
-					_putchar((n % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-			}
+			if (a != 98)
+				printf("%d, ", a);
+			else if (a == 98)
+				printf("%d\n", a);
 		}
-		_putchar('\n');
-	}
-	else if (n == 0)
+	} else if (n >= 98)
 	{
-		_putchar((n / 10) + '0');
-		_putchar((n % 10) + '0');
-		_putchar('\n');
-	}
-	else
-	{
-		for (; n >= end; n--)
+		for (b = n; b >= 98; b--)
 		{
-			if (n == 98)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				break;
-			}
-			else
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-				_putchar(',');
-				_putchar(' ');
-			}
+			if (b != 98)
+				printf("%d, ", b);
+			else if (b == 98)
+				printf("%d\n", b);
 		}
-		_putchar('\n');
 	}
-	return;
 }
