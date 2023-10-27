@@ -1,1 +1,1 @@
-added to pointers
+added to arrays
